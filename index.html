@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#100e12">
+    <meta name="description" content="Grimório de Feitiços da Coven Academy.">
+    <title>Grimório de Feitiços | Coven Academy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <!-- CABEÇALHO -->
+
+    <header class="topbar">
+        <a href="#inicio" class="brand">
+            <span class="brand-mark">✦</span>
+
+            <span>
+                <strong>COVEN ACADEMY</strong>
+                <small>ARQUIVO DE CONHECIMENTO MÁGICO</small>
+            </span>
+        </a>
+
+        <nav class="main-nav">
+            <a href="#inicio">Início</a>
+            <a href="#grimorio">Grimório</a>
+            <a href="#avisos">Orientações</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- APRESENTAÇÃO -->
+
+        <section class="hero" id="inicio">
+
+            <div class="hero-copy">
+
+                <p class="eyebrow">
+                    <span></span>
+                    ARQUIVO DE ENCANTAMENTOS
+                </p>
+
+                <h1>
+                    Grimório de <em>Feitiços</em>
+                </h1>
+
+                <p class="hero-description">
+                    Palavras antigas, intenções canalizadas e manifestações
+                    da arte mágica. Consulte os encantamentos registrados
+                    pela Academia e respeite os limites de cada estágio.
+                </p>
+
+                <a href="#grimorio" class="hero-link">
+                    ABRIR O GRIMÓRIO
+                    <span>↘</span>
+                </a>
+
+            </div>
+
+            <div class="hero-seal" aria-hidden="true">
+
+                <div class="seal-ring ring-outer"></div>
+                <div class="seal-ring ring-inner"></div>
+
+                <div class="seal-center">
+                    <span>✧</span>
+                    <small>ARS<br>MAGICA</small>
+                    <span>✧</span>
+                </div>
+
+                <i class="seal-star star-a">✦</i>
+                <i class="seal-star star-b">✧</i>
+                <i class="seal-star star-c">✦</i>
+
+            </div>
+
+        </section>
+
+        <!-- AVISOS -->
+
+        <section class="notice-strip" id="avisos">
+
+            <div class="notice-symbol">!</div>
+
+            <div>
+                <strong>Orientações para a conjuração</strong>
+
+                <p>
+                    Para utilizar feitiços de determinado nível, o personagem
+                    precisa ter alcançado esse mesmo nível de domínio mágico.
+                    Encantamentos do Grimório das Irmandades exigem a
+                    participação de <b>três integrantes da mesma Irmandade</b>,
+                    realizando a conjuração em conjunto.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- GRIMÓRIO -->
+
+        <section class="library" id="grimorio">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">REGISTROS DA ACADEMIA</p>
+                    <h2>Índice do <em>Grimório</em></h2>
+                </div>
+
+                <span class="record-count" id="recordCount">
+                    54 REGISTROS
+                </span>
+
+            </div>
+
+            <!-- SELEÇÃO DOS GRIMÓRIOS -->
+
+            <div class="book-switch" role="tablist">
+
+                <button
+                    class="book-tab active"
+                    data-book="comum"
+                    role="tab"
+                    aria-selected="true"
+                >
+                    <span>01</span>
+                    Grimório Comum
+                </button>
+
+                <button
+                    class="book-tab"
+                    data-book="irmandade"
+                    role="tab"
+                    aria-selected="false"
+                >
+                    <span>02</span>
+                    Grimório das Irmandades
+                </button>
+
+            </div>
+
+            <!-- PESQUISA E FILTROS -->
+
+            <div class="catalog-tools">
+
+                <label class="search-box">
+                    <span>⌕</span>
+
+                    <input
+                        id="searchInput"
+                        type="search"
+                        placeholder="Buscar encantamento, nome ou efeito..."
+                        autocomplete="off"
+                    >
+                </label>
+
+                <div class="level-filters" id="levelFilters">
+
+                    <button class="level-filter active" data-level="all">
+                        Todos
+                    </button>
+
+                    <button class="level-filter" data-level="I">
+                        I
+                    </button>
+
+                    <button class="level-filter" data-level="II">
+                        II
+                    </button>
+
+                    <button class="level-filter" data-level="III">
+                        III
+                    </button>
+
+                    <button class="level-filter" data-level="IV">
+                        IV
+                    </button>
+
+                    <button class="level-filter" data-level="V">
+                        V
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- IDENTIFICAÇÃO DO NÍVEL -->
+
+            <div class="level-intro" id="levelIntro">
+
+                <span class="level-ornament">✧</span>
+
+                <div>
+                    <p class="eyebrow">GRIMÓRIO COMUM</p>
+
+                    <h3>Todos os níveis</h3>
+
+                    <p>
+                        Encantamentos disponíveis conforme o desenvolvimento
+                        mágico do personagem.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- FEITIÇOS CARREGADOS PELO JAVASCRIPT -->
+
+            <div
+                class="spell-list"
+                id="spellList"
+                aria-live="polite"
+            ></div>
+
+            <p class="empty-state" id="emptyState" hidden>
+                Nenhum encantamento encontrado.
+                Tente outro termo ou nível.
+            </p>
+
+        </section>
+
+        <!-- ENCERRAMENTO -->
+
+        <section class="closing-note">
+
+            <span>✦</span>
+
+            <p>
+                “Toda conjuração exige intenção, domínio e responsabilidade.”
+            </p>
+
+            <small>
+                COVEN ACADEMY · GRIMÓRIO DE FEITIÇOS
+            </small>
+
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+        <span>© COVEN ACADEMY</span>
+
+        <span>ARQUIVO DE CONHECIMENTO MÁGICO</span>
+
+        <a href="#inicio">VOLTAR AO TOPO ↑</a>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
